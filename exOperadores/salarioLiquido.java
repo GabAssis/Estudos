@@ -24,7 +24,7 @@ public class salarioLiquido {
 		
 		salarioLiquido = salarioBruto + addNoturno + (horaExtra * 5) - descontos;
 		
-		System.out.printf("O salário líquido do funcionário: %.2f", salarioLiquido);
+		System.out.printf("\nO salário líquido do funcionário: %.2f", salarioLiquido);
 
 	}
 
