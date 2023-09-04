@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class DevsWhile {
     public static void main(String[] args) {
-
         Scanner leia = new Scanner(System.in);
 
         int idade, sexo, categoria, backend = 0, mFront = 0, hMobileMore40 = 0, mFullStackLess30 = 0;
@@ -32,7 +31,6 @@ public class DevsWhile {
             if (idade < 30 && sexo == 2 && categoria == 4) {
                 mFullStackLess30++;
             }
-
             System.out.println("Deseja um novo colaborador: (S/N)");
             newColaborador = leia.nextLine();
         }
