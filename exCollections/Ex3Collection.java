@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Ex3Collection {
     public static void main(String[] args) {
-        Set<Integer> setNums = new HashSet<Integer>();
+        Set<Integer> setNums = new HashSet<>();
         Scanner leia = new Scanner(System.in);
 
         for (int i = 0; i < 10; i++) {
