@@ -24,6 +24,7 @@ public class Ex2Queue {
                 case 1 -> {
                     System.out.println("Digite o nome do livro que deseja adicionar:");
                     livros.add(leia.nextLine());
+                    System.out.println("Livro adicionado!");
                 }
                 case 2 -> System.out.println(livros);
                 case 3 -> {

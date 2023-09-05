@@ -24,14 +24,17 @@ public class Ex1Queue {
                 case 1 -> {
                     System.out.println("Digite o nome do cliente que deseja adicionar:");
                     clientesBanco.add(leia.nextLine());
+                    System.out.println("Cliente adicionado!");
                 }
-                case 2 -> System.out.println(clientesBanco);
+                case 2 -> {
+                    System.out.println(clientesBanco);
+                }
                 case 3 -> {
                     if (clientesBanco.isEmpty()) {
                         System.out.println("A fila está vazia!");
                     } else {
                         clientesBanco.remove();
-                        System.out.println("Cliente retirado da  fila!");
+                        System.out.println("O cliente foi chamado!");
                     }
                 }
                 case 0 -> System.out.println("Programa finalizado!");
