@@ -31,7 +31,7 @@ public class Ex2Queue {
                         System.out.println("A fila está vazia!");
                     } else {
                         livros.pop();
-                        System.out.println("Cliente retirado da  fila!");
+                        System.out.println("Livro retirado da pilha!");
                     }
                 }
                 case 0 -> System.out.println("Saiu!");
