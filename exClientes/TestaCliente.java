@@ -6,21 +6,19 @@ public class TestaCliente {
 
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
-        DadosClientes cliente1 = new DadosClientes();
+        PessoaFisica cliente1 = new PessoaFisica(null,0,0,'a',0,"A");
+        PessoaJuridica cliente2 = new PessoaJuridica(null,0,0,'a',0,"A");
 
-        System.out.println("Digite o nome do cliente: ");
-        cliente1.setNome(leia.nextLine());
-        System.out.println("Digite a idade do cliente: ");
-        cliente1.setIdade(leia.nextInt());
-        System.out.println("Digite a altura do cliente: ");
-        cliente1.setAltura(leia.nextFloat());
-        System.out.println("Digite o sexo do cliente: ");
-        cliente1.setSexo(leia.next().charAt(0));
-        System.out.println("Digite o peso do cliente: ");
-        cliente1.setPeso(leia.nextFloat());
-
+        //menu de input dos dados do cliente 1
+        cliente1.inputCliente();
         cliente1.visualizar();
-        System.out.printf("\nO imc do cliente é: %f",cliente1.imc());
+        System.out.printf("\nO imc do cliente é: %.2f",cliente1.imc());
+        cliente1.modeloCPF();
+
+        //menu de input dos dados do cliente 2
+        cliente2.inputCliente();
+        cliente2.visualizar();
+        System.out.printf("\nO imc do cliente é: %.2f",cliente2.imc());
 
     }
 

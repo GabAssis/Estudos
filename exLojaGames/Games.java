@@ -17,7 +17,7 @@ public class Games {
     public void liberarVenda(int idade) {
 
         if ((idade >= 18) && isMaiorIdade()) {
-            System.out.println("\nJOGO LIBERADO PARA O COMPRADOR!");
+
         } else{
             System.out.println("\nJOGO PROIBIDO PARA O COMPRADOR!");
 
