@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class TestaCliente {
 
     public static void main(String[] args) {
-        Scanner leia = new Scanner(System.in);
         PessoaFisica cliente1 = new PessoaFisica(null,0,0,'a',0,"A");
         PessoaJuridica cliente2 = new PessoaJuridica(null,0,0,'a',0,"A");
 
