@@ -1,0 +1,41 @@
+package exClientes;
+public class PessoaFisica extends DadosClientes {
+
+    private String cpfCliente;
+
+    //CONSTRUCTOR
+    public PessoaFisica(String nome, int idade, float altura, char sexo, float peso, String cpfCliente) {
+        super(nome, idade, altura, sexo, peso);
+        this.cpfCliente = cpfCliente;
+    }
+
+    //MÉTODOS
+    public void modeloCPF(){
+            if( getIdade() > 50) {
+                System.out.println("\nO cliente tem um cpf no modelo antigo!");
+            }else System.out.println("\nO cliente tem um cpf no modelo novo!");
+    }
+
+    @Override
+    public void inputCliente(){
+        super.inputCliente();
+        System.out.println("Digite o CPF do cliente: ");
+        leia.nextLine();
+        setCpfCliente(leia.nextLine());
+    }
+    @Override
+    public void visualizar() {
+        super.visualizar();
+        System.out.println("\nO cpf do cliente é: " + this.cpfCliente);
+
+    }
+
+    //GET AND SET
+    public String getCpfCliente() {
+        return cpfCliente;
+    }
+
+    public void setCpfCliente(String cpfCliente) {
+        this.cpfCliente = cpfCliente;
+    }
+}
