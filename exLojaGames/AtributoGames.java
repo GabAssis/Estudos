@@ -2,33 +2,43 @@ package exLojaGames;
 
 import java.util.Scanner;
 
-public class Games {
+public class AtributoGames {
 
     private String nomeDoJogo;
-    private String plataformaJogo;
     private boolean maiorIdade;
-    private String tipoJogo;
     private float valorJogo;
+    public Scanner leia = new Scanner(System.in);
 
     //CONSTRUCTORS
-    //DEIXEI APENAS O PADRÃO POR JA UTILIZAR A ESTRUTURA DE GET AND SET
+
+    public AtributoGames(String nomeDoJogo, boolean maiorIdade, float valorJogo) {
+        this.nomeDoJogo = nomeDoJogo;
+        this.maiorIdade = maiorIdade;
+        this.valorJogo = valorJogo;
+    }
 
     //METHODS
     public void liberarVenda(int idade) {
 
         if ((idade >= 18) && isMaiorIdade()) {
-
-        } else{
+            System.out.println("\nJOGO LIBERADO PARA O COMPRADOR!");
+        } else
             System.out.println("\nJOGO PROIBIDO PARA O COMPRADOR!");
 
-        }
     }
     public void visualizar() {
         System.out.printf("O nome do jogo é: %s",getNomeDoJogo());
-        System.out.printf("\nA plataforma do jogo é: %s",getPlataformaJogo());
         System.out.printf("\nO jogo é para maiores de 18 anos? %b",isMaiorIdade());
-        System.out.printf("\nO jogo é do tipo: %s",getTipoJogo());
         System.out.printf("\nO valor do jogo é: %.2f",getValorJogo());
+    }
+
+    public void inputGameName(){
+        System.out.println("\nDigite o nome do jogo: ");
+        setNomeDoJogo(leia.nextLine());
+        System.out.println("O jogo é para maiores de idade?(true para SIM/false para NÃO): ");
+        setMaiorIdade(leia.nextBoolean());
+        System.out.println("Digite o valor do jogo: ");
+        setValorJogo(leia.nextFloat());
     }
 
     public String getNomeDoJogo() {
@@ -39,28 +49,12 @@ public class Games {
         this.nomeDoJogo = nomeDoJogo;
     }
 
-    public String getPlataformaJogo() {
-        return plataformaJogo;
-    }
-
-    public void setPlataformaJogo(String plataformaJogo) {
-        this.plataformaJogo = plataformaJogo;
-    }
-
     public boolean isMaiorIdade() {
         return maiorIdade;
     }
 
     public void setMaiorIdade(boolean maiorIdade) {
         this.maiorIdade = maiorIdade;
-    }
-
-    public String getTipoJogo() {
-        return tipoJogo;
-    }
-
-    public void setTipoJogo(String tipoJogo) {
-        this.tipoJogo = tipoJogo;
     }
 
     public float getValorJogo() {
