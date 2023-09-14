@@ -1,5 +1,6 @@
 package exClientes;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class DadosClientes {
@@ -21,30 +22,61 @@ public class DadosClientes {
     }
 
     //METHODS
-    public float imc(){
-        return getPeso()/(getAltura()*2);
+    public float imc() {
+        return getPeso() / (getAltura() * 2);
     }
 
-    public void inputCliente(){
+    public void inputCliente() {
+
 
         System.out.println("\nDigite o nome do cliente: ");
         setNome(leia.nextLine());
-        System.out.println("Digite a idade do cliente: ");
-        setIdade(leia.nextInt());
-        System.out.println("Digite a altura do cliente: ");
-        setAltura(leia.nextFloat());
-        System.out.println("Digite o sexo do cliente: ");
-        setSexo(leia.next().charAt(0));
-        System.out.println("Digite o peso do cliente: ");
-        setPeso(leia.nextFloat());
+        while (true) {
+            try {
+                System.out.println("Digite a idade do cliente: ");
+                setIdade(Integer.parseInt(leia.nextLine()));
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Input inválido para Idade.Digite um número inteiro! ");
+            }
+        }
+        while (true) {
+            try {
+                System.out.println("Digite a altura do cliente: ");
+                setAltura(Float.parseFloat(leia.nextLine()));
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Input inválido para altura.Digite um número ! ");
+            }
+        }while (true) {
+                System.out.println("Digite o sexo do cliente: (M ou F)");
+                String sexoCliente = String.valueOf(leia.nextLine().charAt(0));
+                if(sexoCliente.equalsIgnoreCase("m")  || sexoCliente.equalsIgnoreCase("f") ){
+                    setSexo(sexoCliente.charAt(0));
+                } else{
+                    System.out.println("String inválida");
+                    continue;
+                }
+                break;
+            }
+        while (true) {
+            try {
+                System.out.println("Digite o peso do cliente: ");
+                setPeso(Float.parseFloat(leia.nextLine()));
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Input inválido para o peso.Digite um peso válido ! ");
+            }
+        }
+
     }
 
     public void visualizar() {
-        System.out.printf("O nome do cliente é: %s",getNome());
-        System.out.printf("\nA idade do cliente é: %d",getIdade());
-        System.out.printf("\nA altura do cliente é: %.2f",getAltura());
-        System.out.printf("\nO sexo do cliente é: %c",getSexo());
-        System.out.printf("\nO peso do cliente é: %.2f",getPeso());
+        System.out.printf("O nome do cliente é: %s", getNome());
+        System.out.printf("\nA idade do cliente é: %d", getIdade());
+        System.out.printf("\nA altura do cliente é: %.2f", getAltura());
+        System.out.printf("\nO sexo do cliente é: %c", getSexo());
+        System.out.printf("\nO peso do cliente é: %.2f", getPeso());
     }
 
 

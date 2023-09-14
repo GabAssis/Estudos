@@ -20,7 +20,6 @@ public class PessoaFisica extends DadosClientes {
     public void inputCliente(){
         super.inputCliente();
         System.out.println("Digite o CPF do cliente: ");
-        leia.nextLine();
         setCpfCliente(leia.nextLine());
     }
     @Override
