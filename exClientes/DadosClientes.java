@@ -1,6 +1,7 @@
 package exClientes;
 
 import java.util.InputMismatchException;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class DadosClientes {
@@ -28,9 +29,21 @@ public class DadosClientes {
 
     public void inputCliente() {
 
-
+        while (true) {
         System.out.println("\nDigite o nome do cliente: ");
-        setNome(leia.nextLine());
+        String nome = leia.nextLine();
+        if (nome.isEmpty()) {
+            nome = null;
+        }
+        Optional<String> verificaNulo = Optional.ofNullable(nome);
+            if (verificaNulo.isPresent()) {
+                setNome(nome);
+                break;
+            } else {
+                System.out.println("Nome não digitado");
+            }
+        }
+
         while (true) {
             try {
                 System.out.println("Digite a idade do cliente: ");
@@ -48,17 +61,18 @@ public class DadosClientes {
             } catch (NumberFormatException e) {
                 System.out.println("Input inválido para altura.Digite um número ! ");
             }
-        }while (true) {
-                System.out.println("Digite o sexo do cliente: (M ou F)");
-                String sexoCliente = String.valueOf(leia.nextLine().charAt(0));
-                if(sexoCliente.equalsIgnoreCase("m")  || sexoCliente.equalsIgnoreCase("f") ){
-                    setSexo(sexoCliente.charAt(0));
-                } else{
-                    System.out.println("String inválida");
-                    continue;
-                }
-                break;
+        }
+        while (true) {
+            System.out.println("Digite o sexo do cliente: (M ou F)");
+            String sexoCliente = String.valueOf(leia.nextLine().charAt(0));
+            if (sexoCliente.equalsIgnoreCase("m") || sexoCliente.equalsIgnoreCase("f")) {
+                setSexo(sexoCliente.charAt(0));
+            } else {
+                System.out.println("String inválida");
+                continue;
             }
+            break;
+        }
         while (true) {
             try {
                 System.out.println("Digite o peso do cliente: ");
