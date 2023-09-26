@@ -7,7 +7,7 @@ id_estudante bigint auto_increment primary key,
 nome varchar(255) not null,
 dataNascimento varchar(255) not null,
 sala varchar(255),
-notaGeral decimal(8,2)
+notaGeral decimal(9,2)
 );
 
 insert into tb_estudantes(nome,dataNascimento,sala,notaGeral) 
